@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    max-width: 60%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -28,9 +28,9 @@ li {
 }
 
 button {
-    width: 150px;
+    width: 10em;
     margin: 0 2% 0 2%;
-    height: 50px;
+    height: 3em;
     border-radius: 15%;
     border: none;
     background-color: #99FF33;
