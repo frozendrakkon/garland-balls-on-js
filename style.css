@@ -40,30 +40,42 @@ button:hover {
     background-color: #33FF00;
 }
 
-#yellow {
+.yellow {
     background-color: #FFCC00;
+
+}
+
+.green {
+    background-color: #00FF00;
+
+}
+
+.blue {
+    background-color: #0066FF;
+    -
+}
+
+.red {
+    background-color: #FF0033;
+
+}
+
+.glow-yellow {
     -webkit-box-shadow: 0px 0px 50px 22px #FFFE5F;
     box-shadow: 0px 0px 50px 22px #FFFE5F;
-    display: none;
 }
 
-#green {
-    background-color: #00FF00;
-    -webkit-box-shadow: 0px 0px 50px 22px #1FFF2C;
-    box-shadow: 0px 0px 50px 22px #1FFF2C;
-    display: none;
-}
-
-#blue {
-    background-color: #0066FF;
-    -webkit-box-shadow: 0px 0px 50px 22px #081BFF;
+.glow-blue {
+    webkit-box-shadow: 0px 0px 50px 22px #081BFF;
     box-shadow: 0px 0px 50px 22px #081BFF;
-    display: none;
 }
 
-#red {
-    background-color: #FF0033;
+.glow-red {
     -webkit-box-shadow: 0px 0px 50px 22px #FF1F37;
     box-shadow: 0px 0px 50px 22px #FF1F37;
-    display: none;
+}
+
+.glow-green {
+    -webkit-box-shadow: 0px 0px 50px 22px #1FFF2C;
+    box-shadow: 0px 0px 50px 22px #1FFF2C;
 }
