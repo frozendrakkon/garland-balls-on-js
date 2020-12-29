@@ -52,7 +52,6 @@ button:hover {
 
 .blue {
     background-color: #0066FF;
-    -
 }
 
 .red {
@@ -66,7 +65,7 @@ button:hover {
 }
 
 .glow-blue {
-    webkit-box-shadow: 0px 0px 50px 22px #081BFF;
+    -webkit-box-shadow: 0px 0px 50px 22px #081BFF;
     box-shadow: 0px 0px 50px 22px #081BFF;
 }
 
