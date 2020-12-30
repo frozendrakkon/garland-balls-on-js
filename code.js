@@ -1,16 +1,25 @@
-const yellow = document.getElementById("yellow")
-const blue = document.getElementById("blue")
-const green = document.getElementById("green")
-const red = document.getElementById("red")
+const yellow = document.getElementsByClassName("yellow")
+const blue = document.getElementsByClassName("blue")
+const green = document.getElementsByClassName("green")
+const red = document.getElementsByClassName("red")
+
+function iterateElementsColor(color, glow) {
+    for(let i = 0; i < color.length; i++) {
+        color[i].classList.add(`glow-${glow}`)
+    }
+}
 
 
-const doTumblerOffOn = (() => {
-    document.getElementById("tumbler").onclick = function() {
-         yellow.classList.toggle("glow-yellow")
-         blue.classList.toggle("glow-blue")
-         green.classList.toggle("glow-green")
-         red.classList.toggle("glow-red")
+
+
+const TumblerOn = (() => {
+     document.getElementById("tumbler").onclick = function() {
+            iterateElementsColor(yellow, "yellow")
+            iterateElementsColor(blue, "blue")
+            iterateElementsColor(green, "green")
+            iterateElementsColor(red, "red")
     }
 
 })
-doTumblerOffOn()
+
+TumblerOn()
