@@ -38,6 +38,13 @@ button {
 
 button:hover {
     background-color: #33FF00;
+    border: none;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
 }
 
 .yellow {
