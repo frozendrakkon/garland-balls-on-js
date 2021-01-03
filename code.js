@@ -81,16 +81,16 @@ function modeDecay() {
 
     const modeDecayInterval = setInterval(() => {
       setTimeout(() => GarlandGlowYellow(yellow), 200);
-      setTimeout(() => GarlandDecay(yellow, "yellow"), 400)
+      setTimeout(() => GarlandDecay(yellow, "yellow"), 500)
 
       setTimeout(() => GarlandGlowBlue(blue), 400);
-      setTimeout(() => GarlandDecay(blue, "blue"), 600)
+      setTimeout(() => GarlandDecay(blue, "blue"), 700)
 
-      setTimeout(() => GarlandGlowGreen(green), 300);
-      setTimeout(() => GarlandDecay(green, "green"), 400)
+      setTimeout(() => GarlandGlowGreen(green), 600);
+      setTimeout(() => GarlandDecay(green, "green"), 900)
 
-      setTimeout(() => GarlandGlowRed(red), 500);
-      setTimeout(() => GarlandDecay(red, "red"), 700)
+      setTimeout(() => GarlandGlowRed(red), 800);
+      setTimeout(() => GarlandDecay(red, "red"), 1100)
 
       if (DecayModeCounter % 2 !== 0) { // отключение режима подсветки
         clearInterval(modeDecayInterval)
