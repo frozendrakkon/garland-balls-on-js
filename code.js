@@ -92,7 +92,7 @@ function modeDecay() {
       setTimeout(() => GarlandGlowRed(red), 800);
       setTimeout(() => GarlandDecay(red, "red"), 1100)
 
-      if (DecayModeCounter % 2 !== 0) { // отключение режима подсветки
+      if (DecayModeCounter % 2 !== 0) { // отключение режима подсветки 
         clearInterval(modeDecayInterval)
       }
     }, 800);
@@ -102,7 +102,7 @@ function modeDecay() {
 };
 
 
-let TumblerCountClick = 0; // Считаем сколько раз была нажата кнопка => включение / выключение
+let TumblerCountClick = 0; // Считаем сколько раз была нажата кнопка, следовательно включение / выключение
 
 const TumblerOnOff = () => {
   btnTumbler.onclick = function () {
