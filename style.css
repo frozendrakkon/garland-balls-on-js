@@ -1,87 +1,85 @@
 body {
-    background-color: #6699FF;
+  background-color: #6699ff;
 }
 
 .container {
-    width: 60%;
-    margin: 0 auto;
+  width: 60%;
+  margin: 0 auto;
 }
 
 ul {
-    display: flex;
+  display: flex;
 }
 
 li {
-    margin-top: 20%;
-    list-style-type: none;
-    margin-left: 5%;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    background-color: black;
+  margin-top: 20%;
+  list-style-type: none;
+  margin-left: 5%;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background-color: black;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 button {
-    width: 10em;
-    margin: 0 2% 0 2%;
-    height: 3em;
-    border-radius: 15%;
-    border: none;
-    background-color: #99FF33;
+  width: 10em;
+  margin: 0 2% 0 2%;
+  height: 3em;
+  border-radius: 15%;
+  border: none;
+  background-color: #99ff33;
 }
 
 button:hover {
-    background-color: #33FF00;
-    border: none;
+  background-color: #33ff00;
+  border: none;
 }
 
 button,
 button:active,
 button:focus {
-    outline: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .yellow {
-    background-color: #FFCC00;
-
+  background-color: #ffcc00;
 }
 
 .green {
-    background-color: #00FF00;
-
+  background-color: #00ff00;
 }
 
 .blue {
-    background-color: #0066FF;
+  background-color: #0066ff;
 }
 
 .red {
-    background-color: #FF0033;
-
+  background-color: #ff0033;
 }
 
 .glow-yellow {
-    -webkit-box-shadow: 0px 0px 50px 22px #FFFE5F;
-    box-shadow: 0px 0px 50px 22px #FFFE5F;
+  -webkit-box-shadow: 0px 0px 50px 22px #fffe5f;
+  box-shadow: 0px 0px 50px 22px #fffe5f;
 }
 
 .glow-blue {
-    -webkit-box-shadow: 0px 0px 50px 22px #081BFF;
-    box-shadow: 0px 0px 50px 22px #081BFF;
+  -webkit-box-shadow: 0px 0px 50px 22px #081bff;
+  box-shadow: 0px 0px 50px 22px #081bff;
 }
 
 .glow-red {
-    -webkit-box-shadow: 0px 0px 50px 22px #FF1F37;
-    box-shadow: 0px 0px 50px 22px #FF1F37;
+  -webkit-box-shadow: 0px 0px 50px 22px #ff1f37;
+  box-shadow: 0px 0px 50px 22px #ff1f37;
 }
 
 .glow-green {
-    -webkit-box-shadow: 0px 0px 50px 22px #1FFF2C;
-    box-shadow: 0px 0px 50px 22px #1FFF2C;
+  -webkit-box-shadow: 0px 0px 50px 22px #1fff2c;
+  box-shadow: 0px 0px 50px 22px #1fff2c;
 }

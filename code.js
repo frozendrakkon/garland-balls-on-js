@@ -1,12 +1,16 @@
+
+
 const yellow = document.getElementsByClassName("yellow");
 const blue = document.getElementsByClassName("blue");
 const green = document.getElementsByClassName("green");
 const red = document.getElementsByClassName("red");
 
 const btnTumbler = document.getElementById("tumbler");
-const btnMode = document.getElementById("mode");
+const btnModeAlternate = document.getElementById("mode-alternate");
+const btnModeDecay = document.getElementById("mode-decay")
 const btnLight = document.getElementById("light");
 
+// добавляем свечение элементами
 function GarlandGlowYellow(color) {
   for (let i = 0; i < color.length; i++) {
     color[i].classList.add("glow-yellow");
@@ -38,14 +42,16 @@ function GarlandDecay(color, glow) {
   }
 }
 
-let modeAlternateCountClick = 1;
+// Счетчик количества включения функции 
+let AlternateModeCounter = 1
 
 function modeAlternate() {
 
-  btnMode.onclick = function () {
-  modeAlternateCountClick += 1
+  btnModeAlternate.onclick = function () {
 
-    setInterval(() => {
+    AlternateModeCounter++
+
+    const modeAlternateInterval = setInterval(() => {
       setTimeout(() => GarlandGlowYellow(yellow), 200);
       setTimeout(() => GarlandGlowBlue(blue), 300);
       setTimeout(() => GarlandGlowGreen(green), 400);
@@ -57,19 +63,50 @@ function modeAlternate() {
         GarlandDecay(green, "green");
         GarlandDecay(red, "red");
       }, 700);
+
+      if (AlternateModeCounter % 2 !== 0) { // отключение режима подсветки
+        clearInterval(modeAlternateInterval)
+      }
     }, 800);
   };
 }
 
+let DecayModeCounter = 1
+
 // режим, когда лампочка одного цвета затухает, и включается другой цвет
-function modeDecay() {};
+function modeDecay() {
+  btnModeDecay.onclick = function () {
+
+    DecayModeCounter++
+
+    const modeDecayInterval = setInterval(() => {
+      setTimeout(() => GarlandGlowYellow(yellow), 200);
+      setTimeout(() => GarlandDecay(yellow, "yellow"), 400)
+
+      setTimeout(() => GarlandGlowBlue(blue), 400);
+      setTimeout(() => GarlandDecay(blue, "blue"), 600)
+
+      setTimeout(() => GarlandGlowGreen(green), 300);
+      setTimeout(() => GarlandDecay(green, "green"), 400)
+
+      setTimeout(() => GarlandGlowRed(red), 500);
+      setTimeout(() => GarlandDecay(red, "red"), 700)
+
+      if (DecayModeCounter % 2 !== 0) { // отключение режима подсветки
+        clearInterval(modeDecayInterval)
+      }
+    }, 800);
+
+
+  }
+};
 
 
 let TumblerCountClick = 0; // Считаем сколько раз была нажата кнопка => включение / выключение
 
 const TumblerOnOff = () => {
   btnTumbler.onclick = function () {
-    TumblerCountClick += 1;
+    TumblerCountClick++;
     if (TumblerCountClick % 2 !== 0) {
       GarlandGlowYellow(yellow);
       GarlandGlowBlue(blue);
@@ -91,7 +128,7 @@ let CountLightClick = 1;
 
 const lightOffOnn = () => {
   btnLight.onclick = function () {
-    CountLightClick += 1;
+    CountLightClick++;
     if (CountLightClick % 2 !== 0) {
       document.body.style.backgroundColor = "#6699FF";
       btnLight.innerHTML = "Night";
@@ -105,3 +142,4 @@ const lightOffOnn = () => {
 TumblerOnOff();
 modeAlternate();
 lightOffOnn();
+modeDecay()
