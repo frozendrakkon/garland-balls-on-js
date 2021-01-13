@@ -5,164 +5,94 @@ const blue = document.getElementsByClassName("blue");
 const green = document.getElementsByClassName("green");
 const red = document.getElementsByClassName("red");
 
-<<<<<<< HEAD
-function garlandGlowYellow(color) {
-    for(let i = 0; i < color.length; i++) {
-        color[i].classList.add("glow-yellow")
-    }
-}
-
-function garlandGlowBlue(color) {
-    for(let i = 0; i < color.length; i++) {
-        color[i].classList.add("glow-blue")
-    }
-}
-
-function garlandGlowGreen(color) {
-    for(let i = 0; i < color.length; i++) {
-        color[i].classList.add(`glow-green`)
-    }
-}
-
-function garlandGlowRed(color) {
-    for(let i = 0; i < color.length; i++) {
-        color[i].classList.add("glow-red")
-    }
-}
-
-// убираем свечение
-function garlandDecay(color, glow) {
-    for(let i = 0; i < color.length; i++) {
-        color[i].classList.remove(`glow-${glow}`)
-    }
-} 
-=======
 const btnTumbler = document.getElementById("tumbler");
 const btnModeAlternate = document.getElementById("mode-alternate");
 const btnModeDecay = document.getElementById("mode-decay")
 const btnLight = document.getElementById("light");
 
 // добавляем свечение элементами
-function GarlandGlowYellow(color) {
+function garlandGlowYellow(color) {
   for (let i = 0; i < color.length; i++) {
     color[i].classList.add("glow-yellow");
   }
 }
 
-function GarlandGlowBlue(color) {
+function garlandGlowBlue(color) {
   for (let i = 0; i < color.length; i++) {
     color[i].classList.add("glow-blue");
   }
 }
 
-function GarlandGlowGreen(color) {
+function garlandGlowGreen(color) {
   for (let i = 0; i < color.length; i++) {
     color[i].classList.add(`glow-green`);
   }
 }
 
-function GarlandGlowRed(color) {
+function garlandGlowRed(color) {
   for (let i = 0; i < color.length; i++) {
     color[i].classList.add("glow-red");
   }
 }
 
 // убираем свечение
-function GarlandDecay(color, glow) {
+function garlandDecay(color, glow) {
   for (let i = 0; i < color.length; i++) {
     color[i].classList.remove(`glow-${glow}`);
   }
 }
->>>>>>> bb9c62f4d1cee471485c44fcf462bc73de6ba31d
 
 // Счетчик количества включения функции 
-let AlternateModeCounter = 1
+let alternateModeCounter = 1
 
 function modeAlternate() {
-<<<<<<< HEAD
-    
-    btnMode.onclick = function () {
-
-        setTimeout(() => garlandGlowYellow(yellow), 200);
-        setTimeout(() => garlandGlowBlue(blue), 400);
-        setTimeout(() => garlandGlowGreen(green), 600);
-        setTimeout(() => garlandGlowRed(red), 800);
-        
-        setTimeout(() => {
-            garlandDecay(yellow, "yellow")
-            garlandDecay(blue, "blue")
-            garlandDecay(green, "green")
-            garlandDecay(red, "red")
-        }, 1000);
-    }
-}
-
-let TumblerCountClick = 0; // Считаем сколько раз была нажата кнопка => включение / выключение
-
-const tumblerOnOff = (() => {
-
-    btnTumbler.onclick = function() {
-        TumblerCountClick += 1
-         if (TumblerCountClick % 2 !== 0 ) {
-            garlandGlowYellow(yellow)
-            garlandGlowBlue(blue)
-            garlandGlowGreen(green)
-            garlandGlowRed(red)
-         } else {
-            garlandDecay(yellow, "yellow")
-            garlandDecay(blue, "blue")
-            garlandDecay(green, "green")
-            garlandDecay(red, "red")
-            
-         }
-=======
 
   btnModeAlternate.onclick = function () {
 
-    AlternateModeCounter++
+    alternateModeCounter++
 
     const modeAlternateInterval = setInterval(() => {
-      setTimeout(() => GarlandGlowYellow(yellow), 200);
-      setTimeout(() => GarlandGlowBlue(blue), 300);
-      setTimeout(() => GarlandGlowGreen(green), 400);
-      setTimeout(() => GarlandGlowRed(red), 500);
+      setTimeout(() => garlandGlowYellow(yellow), 200);
+      setTimeout(() => garlandGlowBlue(blue), 300);
+      setTimeout(() => garlandGlowGreen(green), 400);
+      setTimeout(() => garlandGlowRed(red), 500);
 
       setTimeout(() => {
-        GarlandDecay(yellow, "yellow");
-        GarlandDecay(blue, "blue");
-        GarlandDecay(green, "green");
-        GarlandDecay(red, "red");
+        garlandDecay(yellow, "yellow");
+        garlandDecay(blue, "blue");
+        garlandDecay(green, "green");
+        garlandDecay(red, "red");
       }, 700);
 
-      if (AlternateModeCounter % 2 !== 0) { // отключение режима подсветки
+      if (alternateModeCounter % 2 !== 0) { // отключение режима подсветки
         clearInterval(modeAlternateInterval)
       }
     }, 800);
   };
 }
 
-let DecayModeCounter = 1
+let decayModeCounter = 1
 
 // режим, когда лампочка одного цвета затухает, и включается другой цвет
 function modeDecay() {
   btnModeDecay.onclick = function () {
 
-    DecayModeCounter++
+    decayModeCounter++
 
     const modeDecayInterval = setInterval(() => {
-      setTimeout(() => GarlandGlowYellow(yellow), 200);
-      setTimeout(() => GarlandDecay(yellow, "yellow"), 500)
+      setTimeout(() => garlandGlowYellow(yellow), 200);
+      setTimeout(() => garlandDecay(yellow, "yellow"), 500)
 
-      setTimeout(() => GarlandGlowBlue(blue), 400);
-      setTimeout(() => GarlandDecay(blue, "blue"), 700)
+      setTimeout(() => garlandGlowBlue(blue), 400);
+      setTimeout(() => garlandDecay(blue, "blue"), 700)
 
-      setTimeout(() => GarlandGlowGreen(green), 600);
-      setTimeout(() => GarlandDecay(green, "green"), 900)
+      setTimeout(() => garlandGlowGreen(green), 600);
+      setTimeout(() => garlandDecay(green, "green"), 900)
 
-      setTimeout(() => GarlandGlowRed(red), 800);
-      setTimeout(() => GarlandDecay(red, "red"), 1100)
+      setTimeout(() => garlandGlowRed(red), 800);
+      setTimeout(() => garlandDecay(red, "red"), 1100)
 
-      if (DecayModeCounter % 2 !== 0) { // отключение режима подсветки 
+      if (decayModeCounter % 2 !== 0) { // отключение режима подсветки 
         clearInterval(modeDecayInterval)
       }
     }, 800);
@@ -172,35 +102,34 @@ function modeDecay() {
 };
 
 
-let TumblerCountClick = 0; // Считаем сколько раз была нажата кнопка, следовательно включение / выключение
+let tumblerCountClick = 0; // Считаем сколько раз была нажата кнопка, следовательно включение / выключение
 
-const TumblerOnOff = () => {
+const tumblerOnOff = () => {
   btnTumbler.onclick = function () {
-    TumblerCountClick++;
-    if (TumblerCountClick % 2 !== 0) {
-      GarlandGlowYellow(yellow);
-      GarlandGlowBlue(blue);
-      GarlandGlowGreen(green);
-      GarlandGlowRed(red);
+    tumblerCountClick++;
+    if (tumblerCountClick % 2 !== 0) {
+      garlandGlowYellow(yellow);
+      garlandGlowBlue(blue);
+      garlandGlowGreen(green);
+      garlandGlowRed(red);
       btnTumbler.innerHTML = "OFF";
 
     } else {
-      GarlandDecay(yellow, "yellow");
-      GarlandDecay(blue, "blue");
-      GarlandDecay(green, "green");
-      GarlandDecay(red, "red");
+      garlandDecay(yellow, "yellow");
+      garlandDecay(blue, "blue");
+      garlandDecay(green, "green");
+      garlandDecay(red, "red");
       btnTumbler.innerHTML = "ON";
->>>>>>> bb9c62f4d1cee471485c44fcf462bc73de6ba31d
     }
   };
 };
 
-let CountLightClick = 1;
+let countLightClick = 1;
 
 const lightOffOnn = () => {
   btnLight.onclick = function () {
-    CountLightClick++;
-    if (CountLightClick % 2 !== 0) {
+    countLightClick++;
+    if (countLightClick % 2 !== 0) {
       document.body.style.backgroundColor = "#6699FF";
       btnLight.innerHTML = "Night";
     } else {
@@ -210,13 +139,7 @@ const lightOffOnn = () => {
   };
 };
 
-<<<<<<< HEAD
-tumblerOnOff()
-modeAlternate()
-lightOffOnn()
-=======
-TumblerOnOff();
+tumblerOnOff();
 modeAlternate();
 lightOffOnn();
 modeDecay()
->>>>>>> bb9c62f4d1cee471485c44fcf462bc73de6ba31d
