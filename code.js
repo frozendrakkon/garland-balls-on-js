@@ -1,5 +1,3 @@
-
-
 const yellow = document.getElementsByClassName("yellow");
 const blue = document.getElementsByClassName("blue");
 const green = document.getElementsByClassName("green");
@@ -49,6 +47,10 @@ function modeAlternate() {
 
   btnModeAlternate.onclick = function () {
 
+    // * отключаем кнопки, чтобы не поломать скрипт
+    btnModeDecay.disabled = true;
+    btnTumbler.disabled = true;
+
     alternateModeCounter++
 
     const modeAlternateInterval = setInterval(() => {
@@ -64,8 +66,10 @@ function modeAlternate() {
         garlandDecay(red, "red");
       }, 700);
 
-      if (alternateModeCounter % 2 !== 0) { // отключение режима подсветки
+      if (alternateModeCounter % 2 !== 0) { //*  отключение режима подсветки
         clearInterval(modeAlternateInterval)
+        btnModeDecay.disabled = false;
+        btnTumbler.disabled = false;
       }
     }, 800);
   };
@@ -73,9 +77,11 @@ function modeAlternate() {
 
 let decayModeCounter = 1
 
-// режим, когда лампочка одного цвета затухает, и включается другой цвет
+// * режим, когда лампочка одного цвета затухает, и включается другой цвет
 function modeDecay() {
   btnModeDecay.onclick = function () {
+    btnModeAlternate.disabled = true;
+    btnTumbler.disabled = true;
 
     decayModeCounter++
 
@@ -92,8 +98,10 @@ function modeDecay() {
       setTimeout(() => garlandGlowRed(red), 800);
       setTimeout(() => garlandDecay(red, "red"), 1100)
 
-      if (decayModeCounter % 2 !== 0) { // отключение режима подсветки 
+      if (decayModeCounter % 2 !== 0) { // * отключение режима подсветки 
         clearInterval(modeDecayInterval)
+        btnModeAlternate.disabled = false;
+        btnTumbler.disabled = false;
       }
     }, 800);
 
@@ -102,7 +110,7 @@ function modeDecay() {
 };
 
 
-let tumblerCountClick = 0; // Считаем сколько раз была нажата кнопка, следовательно включение / выключение
+let tumblerCountClick = 0; // * Считаем сколько раз была нажата кнопка, следовательно включение / выключение
 
 const tumblerOnOff = () => {
   btnTumbler.onclick = function () {

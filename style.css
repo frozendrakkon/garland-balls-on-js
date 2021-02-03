@@ -9,6 +9,7 @@ body {
 
 ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 li {
@@ -23,17 +24,18 @@ li {
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 5%;
 }
 
 button {
   width: 10em;
-  margin: 0 2% 0 2%;
+  margin: 5% 2% 0 2%;
   height: 3em;
   border-radius: 15%;
   border: none;
   background-color: #99ff33;
+  
 }
 
 button:hover {
